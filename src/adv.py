@@ -45,25 +45,13 @@ player = Player("Henry", room['outside'])
 # print(player)
 
 
-# Write a loop that:
-#
-
-
-
-#
-# If the user enters a cardinal direction, attempt to move to the room there.
-# Print an error message if the movement isn't allowed.
-#
-# If the user enters "q", quit the game.
-
-
-
 # def item_prompt():
 #     prompt = input("What would you like to do with this item?")
 
 
 optional_directions ="Go n, s, e, w!"
 
+#################################### Game LOOP ####################################
 
 while True:
     # * Prints the current room name        
@@ -73,12 +61,13 @@ while True:
     # * Waits for user input and decides what to do.
     travel = input("Please enter a direction for your player to travel to:\n").lower()[0]
     # print(travel)
-
-    if travel == 'n':
+    # If the user enters a cardinal direction, attempt to move to the room there.
+    # Print an error message if the movement isn't allowed.
+    if travel == 'n' and player.location.name != 'overlook' and player.location.name != 'treasure':
         player.location = player.location.n_to
-    elif travel == 's':
+    elif travel == 's' and player.location.name != 'narrow' and player.location.name != 'outside':
         player.location = player.location.s_to
-    elif travel == 'e':
+    elif travel == 'e' and player.location.name != 'narrow' and player.location.name != 'treasure' and player.location.name != 'overlook' and player.location.name != 'outside':
         player.location = player.location.e_to
     elif travel == 'w':
         player.location = player.location.w_to
