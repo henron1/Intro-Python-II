@@ -41,13 +41,14 @@ room['treasure'].s_to = room['narrow']
 #
 
 # Make a new player object that is currently in the 'outside' room.
-
-player = Player(room['outside'])
+player = Player("Henry", room['outside'])
+# print(player)
 
 
 # Write a loop that:
 #
 # * Prints the current room name
+
 # * Prints the current description (the textwrap module might be useful here).
 # * Waits for user input and decides what to do.
 #
@@ -55,3 +56,31 @@ player = Player(room['outside'])
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
+
+# optional_directions ="Go n, s, e, w!"
+
+# def item_prompt():
+#     prompt = input("What would you like to do with this item?")
+
+
+
+while True:
+
+    print(f"{player.name} is in {player.location.name}")
+    # print_items()
+
+    travel = input("\n").lower()[0]
+    print(travel)
+
+    if travel == 'n':
+        player.location = player.location.n_to
+    elif travel == 's':
+        player.location = player.location.s_to
+    elif travel == 'e':
+        player.location = player.location.e_to
+    elif travel == 'w':
+        player.location = player.location.w_to
+    elif travel == 'q':
+        print("Game Over!")
+    else:
+        print("please enter either n, s, e, w")

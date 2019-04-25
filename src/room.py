@@ -3,13 +3,14 @@
 # pylint: disable=C0321
 
 class Room:
-    def __init__(self, location, description):
-        self.location = location
+    def __init__(self, name, description):
+        # self.location = location
         self.description = description
+        self.name = name
         self.items = []
 
     def print_items(self, Item):
-        return print(f"{Item.name: Item.description}")
+        return print(f"{self.name: self.description}")
 
     def add_item(self, Item):
-        self.items.append(Item)
+        print(f"You picked up a {self.items}")
