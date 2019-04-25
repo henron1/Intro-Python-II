@@ -69,7 +69,7 @@ while True:
         player.location = player.location.s_to
     elif travel == 'e' and player.location.name != 'narrow' and player.location.name != 'treasure' and player.location.name != 'overlook' and player.location.name != 'outside':
         player.location = player.location.e_to
-    elif travel == 'w':
+    elif travel == 'w' and player.location.name != 'foyer' and player.location.name != 'outside' and player.location.name != 'overlook' and player.location.name != 'treasure':
         player.location = player.location.w_to
     elif travel == 'q':
         print("Game Over!")
