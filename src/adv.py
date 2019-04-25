@@ -47,30 +47,32 @@ player = Player("Henry", room['outside'])
 
 # Write a loop that:
 #
-# * Prints the current room name
 
-# * Prints the current description (the textwrap module might be useful here).
-# * Waits for user input and decides what to do.
+
+
 #
 # If the user enters a cardinal direction, attempt to move to the room there.
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
 
-# optional_directions ="Go n, s, e, w!"
+
 
 # def item_prompt():
 #     prompt = input("What would you like to do with this item?")
 
 
+optional_directions ="Go n, s, e, w!"
+
 
 while True:
-
+    # * Prints the current room name        
     print(f"{player.name} is in {player.location.name}")
-    # print_items()
 
-    travel = input("\n").lower()[0]
-    print(travel)
+    # * Prints the current description (the textwrap module might be useful here).
+    # * Waits for user input and decides what to do.
+    travel = input("Please enter a direction for your player to travel to:\n").lower()[0]
+    # print(travel)
 
     if travel == 'n':
         player.location = player.location.n_to
