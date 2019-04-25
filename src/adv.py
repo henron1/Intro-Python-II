@@ -56,6 +56,7 @@ optional_directions ="Go n, s, e, w!"
 while True:
     # * Prints the current room name        
     print(f"{player.name} is in {player.location.name}")
+    print(player.location.name)
 
     # * Prints the current description (the textwrap module might be useful here).
     # * Waits for user input and decides what to do.
@@ -63,13 +64,13 @@ while True:
     # print(travel)
     # If the user enters a cardinal direction, attempt to move to the room there.
     # Print an error message if the movement isn't allowed.
-    if travel == 'n' and player.location.name != 'overlook' and player.location.name != 'treasure':
+    if travel == 'n' and player.location.name != 'Grand Overlook' and player.location.name != 'Treasure Chamber':
         player.location = player.location.n_to
-    elif travel == 's' and player.location.name != 'narrow' and player.location.name != 'outside':
+    elif travel == 's' and player.location.name != 'Narrow Passage' and player.location.name != 'Outside Cave Entrance':
         player.location = player.location.s_to
-    elif travel == 'e' and player.location.name != 'narrow' and player.location.name != 'treasure' and player.location.name != 'overlook' and player.location.name != 'outside':
+    elif travel == 'e' and player.location.name != 'Narrow Passage' and player.location.name != 'Treasure Chamber' and player.location.name != 'Grand Overlook' and player.location.name != 'Outside Cave Entrance':
         player.location = player.location.e_to
-    elif travel == 'w' and player.location.name != 'foyer' and player.location.name != 'outside' and player.location.name != 'overlook' and player.location.name != 'treasure':
+    elif travel == 'w' and player.location.name != 'Foyer' and player.location.name != 'Outside Cave Entrance' and player.location.name != 'Grand Overlook' and player.location.name != 'Treasure Chamber':
         player.location = player.location.w_to
     elif travel == 'q':
         print("Game Over!")
